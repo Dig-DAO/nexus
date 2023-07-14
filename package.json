@@ -1,4 +1,14 @@
 {
+    "name": "nexus",
+    "version": "0.0.1",
+    "description": "A Discord bot to manage a MPC wallet",
+    "author": "Dig DAO",
+    "contributors": [
+        {
+            "name": "Takeshi",
+            "url": "https://twitter.com/tksohishi"
+        }
+    ],
     "dependencies": {
         "@noble/ed25519": "^1.7.3",
         "discord.js": "^14.11.0",
