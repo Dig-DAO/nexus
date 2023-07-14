@@ -236,7 +236,7 @@ bot.on('interactionCreate', async (interaction) => {
             const address = interaction.options.getString('address');
             const shares = Object.values(approvedShares);
             if (shares.length === 0) {
-                await interaction.reply({
+                await interaction.editReply({
                     content: 'シェアがまだ登録されていません。',
                     ephemeral: true,
                 });
@@ -254,13 +254,13 @@ bot.on('interactionCreate', async (interaction) => {
             try {
                 const response = await wallet.sendTransaction(tx);
                 await provider.waitForTransaction(response.hash);
-                await interaction.reply({
+                await interaction.editReply({
                     content: `${address} に0.01eth (Goerli) を送りました。`,
                     ephemeral: true,
                 });
             } catch (error) {
                 console.error(error);
-                await interaction.reply({
+                await interaction.editReply({
                     content: 'トランザクションに失敗しました',
                     ephemeral: true,
                 });
